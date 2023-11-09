@@ -36,8 +36,12 @@
     font-size: 40px;
 }
 
-/* 中古精算テキスト */
+.ver {
+    font-size: 10px;
+    margin: 0;
+}
 
+/* 中古精算テキスト */
 .chuuko {
     font-size: 20px;
 }
