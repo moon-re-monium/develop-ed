@@ -25,16 +25,27 @@
 /* 自分のカスタムCSSスタイル */
 .key {
     width: 100%;
-    padding: 25px;
+    padding: 35px;
     /* 上下の余白を調整して押せる領域を広げる */
-    font-size: 24px;
+    font-size: 30px;
     /* ボタンのテキストサイズを調整 */
 }
 
+/* リザルトの文字 */
 .col-md-4 {
+    font-size: 40px;
+}
+
+/* 中古精算テキスト */
+
+.chuuko {
     font-size: 20px;
 }
 
 .result-keypad {
-    padding-top: 100px;
+    padding-top: 80px;
+}
+
+.form-control mb-3 {
+    display: none;
 }
