@@ -30,10 +30,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function calculate() {
         const number = parseInt(inputNumber.value);
         if (!isNaN(number)) {
-            const green = Math.floor(number * 0.7);
-            const yellow = Math.floor(number * 0.5);
-            const red = Math.floor(number * 0.3);
-            const work = Math.floor(number * 1.1)
+            const green = Math.round((number * 0.7 * 10) / 10);
+            const yellow = Math.round((number * 0.5 * 10) / 10);
+            const red = Math.round((number * 0.3 * 10) / 10);
+            const work = Math.round((number * 1.1 * 10) / 10)
             greenResult.textContent = green.toLocaleString();
             yellowResult.textContent = yellow.toLocaleString();
             redResult.textContent = red.toLocaleString();
