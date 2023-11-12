@@ -25,9 +25,9 @@
 /* 自分のカスタムCSSスタイル */
 .key {
     width: 100%;
-    padding: 35px;
+    padding: 30px;
     /* 上下の余白を調整して押せる領域を広げる */
-    font-size: 30px;
+    font-size: 50px;
     /* ボタンのテキストサイズを調整 */
 }
 
