@@ -1,66 +1,57 @@
-<!DOCTYPE html>
-<html lang="jp">
+// 最終更新　2023/11/12　15:54
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-    <title>計算サイト</title>
-</head>
+document.addEventListener('DOMContentLoaded', function() {
+    const inputNumber = document.getElementById('inputNumber');
+    const greenResult = document.getElementById('greenResult');
+    const yellowResult = document.getElementById('yellowResult');
+    const workResult = document.getElementById('workResult');
+    const redResult = document.getElementById('redResult');
+    const resetButton = document.getElementById('resetButton');
+    const keypadKeys = document.querySelectorAll('.key');
+    
+    let lastInputTime = 0;
+    const timeoutDuration = 5000; // 5 seconds
 
-<body>
-    <div class="container mt-5">
-        <h1 class="mt-4">傷あり価格計算</h1>
-        <input type="number" id="inputNumber" class="form-control mb-3" placeholder="傷なし価格">
-        <div>
+    keypadKeys.forEach(key => {
+        key.addEventListener('click', function() {
+            const currentTime = new Date().getTime();
+            if (currentTime - lastInputTime > timeoutDuration) {
+                inputNumber.value = '';
+            }
+            
+            const value = key.getAttribute('data-value');
+            inputNumber.value += value;
+            calculate();
+            lastInputTime = currentTime;
+        });
+    });
 
-            <div class="result text-center">
-                <p class="ver">ver:1.3</p>
-                <div class="chuuko">中古精算：<span id="workResult">0</span></div>
-            </div>
-        </div>
+    inputNumber.addEventListener('input', calculate);
+    resetButton.addEventListener('click', reset);
 
+    function calculate() {
+        const number = parseInt(inputNumber.value);
+        if (!isNaN(number)) {
+            const green = Math.round((number * 0.7 * 10) / 10);
+            const yellow = Math.round((number * 0.5 * 10) / 10);
+            const red = Math.round((number * 0.3 * 10) / 10);
+            const work = Math.floor((number * 1.1 *10) / 10);
+            greenResult.textContent = green.toLocaleString();
+            yellowResult.textContent = yellow.toLocaleString();
+            redResult.textContent = red.toLocaleString();
+            workResult.textContent = work.toLocaleString();
+        } else {
+            greenResult.textContent = 0;
+            yellowResult.textContent = 0;
+            redResult.textContent = 0;
+            workResult.textContent = 0;
+        }
+    }
 
-        <div class="row">
-            <div class="col-md-4">
-                <div class="result text-center">
-                    <div class="circle green"></div>
-                    <p><span id="greenResult">0</span></p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="result text-center">
-                    <div class="circle yellow"></div>
-                    <p><span id="yellowResult">0</span></p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="result text-center">
-                    <div class="circle red"></div>
-                    <p><span id="redResult">0</span></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="result-keypad">
-            <div class="row">
-                <button class="key btn btn-light col-4" data-value="1">1</button>
-                <button class="key btn btn-light col-4" data-value="2">2</button>
-                <button class="key btn btn-light col-4" data-value="3">3</button>
-                <button class="key btn btn-light col-4" data-value="4">4</button>
-                <button class="key btn btn-light col-4" data-value="5">5</button>
-                <button class="key btn btn-light col-4" data-value="6">6</button>
-                <button class="key btn btn-light col-4" data-value="7">7</button>
-                <button class="key btn btn-light col-4" data-value="8">8</button>
-                <button class="key btn btn-light col-4" data-value="9">9</button>
-                <button class="key btn btn-light col-4" data-value="0">0</button>
-                <button class="key btn btn-primary col-4" data-value="C">C</button>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-
-</html>
+    function reset() {
+        inputNumber.value = '';
+        greenResult.textContent = 0;
+        yellowResult.textContent = 0;
+        redResult.textContent = 0;
+    }
+});
