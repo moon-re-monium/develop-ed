@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const green = Math.round((number * 0.7 * 10) / 10);
             const yellow = Math.round((number * 0.5 * 10) / 10);
             const red = Math.round((number * 0.3 * 10) / 10);
-            const work = Math.round((number * 1.1 * 10) / 10)
+            const work = Math.floor((number * 1.1 *10) / 10);
             greenResult.textContent = green.toLocaleString();
             yellowResult.textContent = yellow.toLocaleString();
             redResult.textContent = red.toLocaleString();
