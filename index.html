@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap" rel="stylesheet">
+
+    <title>計算サイト</title>
+</head>
+
+<body">
+    <div class="container mt-5">
+        <h1 class="mt-4 time" id="nowTime">現在時刻取得中</h1>
+        <div class="formDisplay">
+            <input type="number" id="inputNumber" class="form-control mb-3" placeholder="傷なし価格">
+        </div>
+    <div>
+
+
+            <div class="result text-center">
+                <div class="workResultText"><span id="displayNumber">0</span></div>
+                <hr class="hr1">
+                <p class="ver">最終更新：2024/01/31</p>
+                <!-- <div class="chuuko">中古精算：<span id="workResult">0</span></div> -->
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="result text-center">
+                    <div class="circle green"></div>
+                    <p><span id="greenResult">0</span></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="result text-center">
+                    <div class="circle yellow"></div>
+                    <p><span id="yellowResult">0</span></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="result text-center">
+                    <div class="circle red"></div>
+                    <p><span id="redResult">0</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="result-keypad">
+            <div class="row">
+                <button class="key btn btn-light col-4" data-value="1">1</button>
+                <button class="key btn btn-light col-4" data-value="2">2</button>
+                <button class="key btn btn-light col-4" data-value="3">3</button>
+                <button class="key btn btn-light col-4" data-value="4">4</button>
+                <button class="key btn btn-light col-4" data-value="5">5</button>
+                <button class="key btn btn-light col-4" data-value="6">6</button>
+                <button class="key btn btn-light col-4" data-value="7">7</button>
+                <button class="key btn btn-light col-4" data-value="8">8</button>
+                <button class="key btn btn-light col-4" data-value="9">9</button>
+                <button class="key btn btn-light col-4" data-value="0">0</button>
+                <button class="key btn btn-primary col-4" data-value="C">C</button>
+                <button class="key btn btn-light col-4" data-value="00">00</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
