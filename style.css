@@ -28,12 +28,16 @@
     margin-bottom: 20px;
 }
 
+.resultText {
+    font-size: 40px;
+}
+
 /* 自分のカスタムCSSスタイル */
 .key {
     width: 100%;
     padding: 30px;
     /* 上下の余白を調整して押せる領域を広げる */
-    font-size: 50px;
+    font-size: 40px;
     /* ボタンのテキストサイズを調整 */
 }
 

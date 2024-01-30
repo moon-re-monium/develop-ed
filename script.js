@@ -1,4 +1,4 @@
-// 最終更新　 2024/01/31 1:14
+// 最終更新　 2024/01/31 2:37
 
 document.addEventListener('DOMContentLoaded', function() {
     const inputNumber = document.getElementById('inputNumber');
